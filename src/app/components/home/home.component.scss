@@ -1,0 +1,22 @@
+.heading {
+    font-size: 4em;
+    margin: 15px;
+}
+.gallariesBar {
+    padding: 2em;
+    .gallaryTabItem {
+        font-size: 2em;
+        margin: 0;
+    }
+    .selectedGallaryTabItem,
+    .gallaryTabItem:hover {
+        cursor: pointer;
+        color: crimson;
+        border-bottom: 3px solid crimson;
+    }
+}
+.spinner {
+    position: absolute;
+    top: calc(50vh - 50px);
+    z-index: 1;
+}

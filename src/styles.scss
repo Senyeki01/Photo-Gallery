@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Artifika&family=Fredericka+the+Great&display=swap");
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+* {
+    font-family: "Artifika", serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Fredericka the Great", cursive;
+}
+.textAlignCenter {
+    text-align: center;
+}
+.marginBottom1em {
+    margin-bottom: 1em;
+}
