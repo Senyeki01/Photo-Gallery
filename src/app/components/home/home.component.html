@@ -1,4 +1,4 @@
-<div class="mainContainer" fxFill fxLayoutAlign="start center" fxLayout="column">
+<div class="mainContainer" fxFill fxLayoutAlign="start center" fxLayout="column" fxFlex="100">
     <div class="spinner" *ngIf="loading">
         <mat-spinner color="accent"></mat-spinner>
         <h3 class="textAlignCenter">Loading...</h3>
@@ -6,13 +6,26 @@
     <div fxLayoutAlign="center center" fxLayout="row">
         <div fxLayout="column" fxFlex="50" fxFlex.sm="70" fxFlex.xs="95" class="textAlignCenter">
             <h1 class="heading">Photo-Gallery</h1>
-            <p>Give a tailor-made experience with custom digital photo albums. Ensure privacy with password-protected
-                websites
-                for each client.</p>
+            <p>This app is using <a href="https://www.flickr.com/services/api/">Flickr API</a> to help you search for
+                any image with specific words. I have a couple of my favorites photos stored in my gallary, please feel
+                free to visit.</p>
+        </div>
+    </div>
+    <div fxLayoutAlign="center center" fxLayout="row" class="fullWidth marginBottom2em" fxLayoutGap="1em">
+        <div fxLayout="column" fxFlex="70" class="inputContainer">
+            <mat-form-field class="example-full-width" appearance="outline" [floatLabel]="'never'"
+                [hideRequiredMarker]="false">
+                <input matInput placeholder="Search for Any Image" [(ngModel)]="searchString">
+                <mat-icon matSuffix (click)="search()" class="pointer">search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div fxLayout="column" fxFlex.sm="70" fxFlex.xs="95" class="inputContainer">
+            <button mat-raised-button color="accent" class="height50px" (click)="getGallaries()">View My
+                Gallary</button>
         </div>
     </div>
 
-    <div class="gallariesBar" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em">
+    <div class="gallariesBar" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em" *ngIf="showGallary">
         <p *ngFor="let gallary of gallaries; let i = index" (click)="getPhotos(gallary.gallery_id, i)"
             class="gallaryTabItem" [class.selectedGallaryTabItem]="selectedGallary === i">
             {{gallary.title._content |

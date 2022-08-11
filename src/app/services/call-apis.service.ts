@@ -10,6 +10,12 @@ export class CallApisService {
 
   constructor(private http: HttpClient) { }
 
+  searchPhotos(search: string): any {
+    let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search`;
+    let params = `&api_key=${environment.API_KEY}&text=${search}&format=json&nojsoncallback=1`
+    return this.http.get(url + params);
+  }
+
   getGallaries(): any {
     let url = `https://www.flickr.com/services/rest/?method=flickr.galleries.getList`;
     let params = `&api_key=${environment.API_KEY}&user_id=${environment.USER_ID}&format=json&nojsoncallback=1&continuation=0&short_limit=2`
