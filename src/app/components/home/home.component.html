@@ -4,7 +4,7 @@
         <h3 class="textAlignCenter">Loading...</h3>
     </div>
     <div fxLayoutAlign="center center" fxLayout="row">
-        <div fxLayout="column" fxFlex="50" class="textAlignCenter">
+        <div fxLayout="column" fxFlex="50" fxFlex.sm="70" fxFlex.xs="95" class="textAlignCenter">
             <h1 class="heading">Photo-Gallery</h1>
             <p>Give a tailor-made experience with custom digital photo albums. Ensure privacy with password-protected
                 websites
@@ -19,8 +19,9 @@
             titlecase}}</p>
     </div>
 
-    <div class="gallary" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-        <div fxLayout="column" fxFlex="30" *ngFor="let photo of photos" class="marginBottom1em">
+    <div class="gallary" fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutAlign.xs="center center">
+        <div fxLayout="column" fxFlex="30" fxFlex.sm="48" fxFlex.xs="95" *ngFor="let photo of photos"
+            class="marginBottom1em">
             <app-photo-card [photo]="photo"></app-photo-card>
         </div>
     </div>
